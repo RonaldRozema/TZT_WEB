@@ -1,0 +1,132 @@
+<template>
+
+  <section>
+    <div class="container">
+      <h3>Edit ${user.first_name} ${user.middle_name} ${user.last_name}</h3>
+
+      <div class="row">
+        <form role="form" submit.delegate="edit()" class="col s12">
+
+          <div class="row">
+            <div class="col s6">
+              <h6>Persoonsgegevens</h6>
+              <hr />
+
+              <div class="row">
+                <div class="input-field col s4">
+                  <input id="first_name" type="text" value.bind="user.first_name" class="validate">
+                  <label for="first_name" class="active">Voornaam</label>
+                </div>
+                <div class="input-field col s3">
+                  <input id="verb" type="text" value.bind="user.middle_name" class="validate">
+                  <label for="verb" class="active">Tussenvoegsel</label>
+                </div>
+                <div class="input-field col s5">
+                  <input id="last_name" type="text" value.bind="user.last_name" class="validate">
+                  <label for="last_name" class="active">Achternaam</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col s12">
+                  <div class="input-field col s6">
+                    <input id="email" type="email" value.bind="user.email" class="validate">
+                    <label for="email" class="active">E-mail</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input id="password" type="password" value.bind="user.password" class="validate">
+                    <label for="password" class="active">Wachtwoord</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="input-field col s6">
+                  <input id="phone" type="text" value.bind="user.phoneNumber" class="validate">
+                  <label for="phone" class="active">Telefoonnummer</label>
+                </div>
+                <div class="input-field col s6">
+                  <input id="is_train_courier" type="checkbox" checked.bind="user.Profile.isCourier">
+                  <label for="is_train_courier">Trein koerier</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="col s6">
+              <h6>Bedrijfsgegevens</h6>
+              <hr />
+
+              <div class="row">
+                <div class="input-field col s6">
+                  <input id="is_company" type="checkbox" checked.bind="user.Profile.isCompany">
+                  <label for="is_company">Bedrijf</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="company_name" type="text" value.bind="user.Profile.companyName" class="validate">
+                  <label for="company_name" class="active">Bedrijfsnaam</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="kvk_no" type="text" value.bind="user.Profile.kvkNo" class="validate">
+                  <label for="kvk_no" class="active">KVK nr</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <h6>Adres gegevens</h6>
+            <hr />
+
+            <div class="row" repeat.for="address of user.Addresses">
+              <div class="input-field col s3">
+                <input id="city" type="text" value.bind="address.city" class="validate">
+                <label for="city" class="active">Woonplaats</label>
+              </div>
+              <div class="input-field col s3">
+                <input id="street" type="text" value.bind="address.street" class="validate">
+                <label for="street" class="active">Straatnaam</label>
+              </div>
+              <div class="input-field col s1">
+                <input id="number" type="text" value.bind="address.number" class="validate">
+                <label for="number" class="active">Nummer</label>
+              </div>
+              <div class="input-field col s1">
+                <input id="ext" type="text" value.bind="address.ext" class="validate">
+                <label for="ext" class="active">Toev.</label>
+              </div>
+              <div class="input-field col s2">
+                <input id="zipcode" type="text" value.bind="address.zipDigits" class="validate">
+                <label for="zipcode" class="active">Postcode</label>
+              </div>
+              <div class="input-field col s2">
+                <select value.bind="address.type" class="browser-default">
+                  <option value="office">Office</option>
+                  <option value="billing">Billing</option>
+                  <option value="shipping">Shipping</option>
+                </select>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col s12">
+              <button class="btn waves-effect waves-light right" type="submit">
+                Opslaan <i class="mdi-content-send right"></i>
+              </button>
+              </button>
+              <a class="btn waves-effect waves-light right yellow" href="#/profile">
+                Annuleren
+              </a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</template>

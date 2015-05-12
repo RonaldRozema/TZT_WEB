@@ -1,0 +1,46 @@
+<template>
+  <div class="">
+    <nav id="navbar" class="light-blue lighten-1" role="navigation">
+      <div class="nav-wrapper">
+        <ul class="left">
+          <li class="${ currentRoute == 'welcome' ? 'active' : '' }">
+            <a href="#/welcome">Home</a>
+          </li>
+          <li if.one-way="isLoggedIn" class="${ currentRoute == 'package' ? 'active' : '' }">
+            <a href="#/package">Pakket versturen</a>
+          </li>
+          <li if.one-way="isLoggedIn" class="${ currentRoute == 'contact' ? 'active' : '' }">
+            <a href="#/contact">Contacten</a>
+          </li>
+          <li if.one-way="isLoggedIn" class="${ currentRoute == 'invoice' ? 'active' : '' }">
+            <a href="#/invoice">Facturen</a>
+          </li>
+          <li if.one-way="isLoggedIn" class="${ currentRoute == 'tracking' ? 'active' : '' }">
+            <a href="#/tracking">Traceren</a>
+          </li>
+        </ul>
+
+        <ul class="right">
+          <li>
+            <a href="#">FAQ</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li>
+          <li if.one-way="!isLoggedIn" class="${ currentRoute == 'login' ? 'active' : '' }">
+            <a href="#/login">Login</a>
+          </li>
+          <li if.one-way="!isLoggedIn" class="${ currentRoute == 'register' ? 'active' : '' }">
+            <a href="#/register">Registreren</a>
+          </li>
+          <li if.one-way="isLoggedIn" class="${ currentRoute == 'profile' ? 'active' : '' }">
+            <a href="#/profile">Mijn profiel</a>
+          </li>
+          <li if.one-way="isLoggedIn" class="${ currentRoute == 'logout' ? 'active' : '' }">
+            <a href="#/logout">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</template>

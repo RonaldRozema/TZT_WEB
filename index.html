@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <title>TZT</title>
+
+    <link rel="stylesheet" type="text/css" href="resources/styles/materialize.css">
+
+    <link rel="stylesheet" type="text/css" href="resources/styles/styles.css">
+  </head>
+  <body aurelia-app="animation-main">
+    <div class="splash">
+      <div class="message">Public Blended Shipping</div>
+      <i class="fa fa-spinner fa-spin"></i>
+    </div>
+
+    <script src="jspm_packages/system.js"></script>
+    <script src="config.js"></script>
+    <script>
+     System.config({
+       "paths": {
+         "*": "dist/*.js"
+       }
+     });
+   </script>
+    <script>
+      System.import('aurelia-bootstrapper');
+    </script>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="resources/js/materialize.js"></script>
+  </body>
+</html>

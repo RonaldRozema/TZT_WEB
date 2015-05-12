@@ -1,0 +1,87 @@
+<template>
+  <section>
+    <div class="container">
+
+      <h3>Nieuw contact</h3>
+
+      <div class="row">
+        <form submit.delegate="create()" class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <input type="text" id="contact_name" value.bind="contact.name" class="validate" tabindex="1">
+              <label for="contact_name">Naam</label>
+            </div>
+            <div class="input-field col s6">
+              <input type="text" id="contact_city" value.bind="contact.city" class="validate" tabindex="7">
+              <label for="contact_city">Plaats</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s2">
+              <input type="text" id="contact_first_name" value.bind="contact.first_name" class="validate" tabindex="2">
+              <label for="contact_first_name">Voornaam</label>
+            </div>
+            <div class="input-field col s2">
+              <input type="text" id="contact_middel_name" value.bind="contact.middel_name" class="validate" tabindex="3">
+              <label for="contact_middel_name">Tussenvoegsel</label>
+            </div>
+            <div class="input-field col s2">
+              <input type="text" id="contact_last_name" value.bind="contact.last_name" class="validate" tabindex="4">
+              <label for="contact_last_name">Achternaam</label>
+            </div>
+            <div class="input-field col s4">
+              <input type="text" id="contact_street" value.bind="contact.street" class="validate" tabindex="8">
+              <label for="contact_street">Straatnaam</label>
+            </div>
+            <div class="input-field col s1">
+              <input type="text" id="contact_number" value.bind="contact.number" class="validate" tabindex="9">
+              <label for="contact_number">Nummer</label>
+            </div>
+            <div class="input-field col s1">
+              <input type="text" id="contact_number_ext" value.bind="contact.number_ext" class="validate" tabindex="10">
+              <label for="contact_number_ext">Ext.</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input type="text" id="contact_email" value.bind="contact.email" class="validate" tabindex="5">
+              <label for="contact_email">E-mail</label>
+            </div>
+            <div class="input-field col s3">
+              <input type="text" id="contact_zipcode_digits" value.bind="contact.zipcode_digits" class="validate" tabindex="11">
+              <label for="contact_zipcode_digits">posctode cijfers</label>
+            </div>
+            <div class="input-field col s3">
+              <input type="text" id="contact_zipcode_ext" value.bind="contact.zipcode_ext" class="validate" tabindex="12">
+              <label for="contact_zipcode_ext">Postcode ext.</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input type="text" id="contact_phone_number" value.bind="contact.phone_number" class="validate" tabindex="6">
+              <label for="contact_phone_number">Telefoonnummer</label>
+            </div>
+            <div class="input-field col s6">
+              <select value.bind="contact.type" id="contact_address_type" class="browser-default" tabindex="13">
+                <option value="office">Office</option>
+                <option value="billing">Billing</option>
+                <option value="shipping">Shipping</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12">
+              <button class="btn waves-effect waves-light right" type="submit" tabindex="14">
+                Toevoegen <i class="mdi-content-send right"></i>
+              </button>
+              <a class="btn waves-effect waves-light yellow right" href="#/contact" tabindex="15">
+                Annuleren
+              </a>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+</template>

@@ -1,0 +1,33 @@
+<template>
+  <section>
+    <div class="container">
+
+
+      <div class="row">
+
+        <div class="col s12">
+          <h3 class="left">Contactenboek</h3>
+          <a class="btn waves-effect waves-light right" style="margin-top:30px;" href="#/create-client">
+            Nieuw contact
+          </a>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col s12">
+          <ul class="collection">
+            <li class="collection-item" repeat.for="contact of my_contacts">
+              <b>Bedrijf: </b>${contact.name} | <b>Adres: </b>${contact.Addresses[0].city}, ${contact.Addresses[0].street}
+              ${contact.Addresses[0].number} ${contact.Addresses[0].numberExt},
+              ${contact.Addresses[0].zipDigits} ${contact.Addresses[0].zipExtend} | <b>Contact: </b>
+              ${contact.Contacts[0].first_name} ${contact.Contacts[0].middle_name}
+              ${contact.Contacts[0].last_name}
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</template>

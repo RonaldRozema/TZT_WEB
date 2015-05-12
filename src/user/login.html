@@ -1,0 +1,38 @@
+<template>
+  <section>
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col s6">
+          <form class="form-signin" submit.delegate="login()">
+            <h3 class="form-signin-heading">Ik ben al klant</h3>
+            <div class="form-group">
+              <input type="text" id="inputEmail" class="form-control" required autofocus value.bind="email">
+              <label for="inputEmail">Email address</label>
+            </div>
+            <div class="form-group">
+              <input type="password" id="inputPassword" class="form-control" required value.bind="password">
+              <label for="inputPassword">Password</label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Inloggen</button>
+          </form>
+          <br />
+          <div class="alert alert-${messageType}" show.bind="showMessage">
+            ${message}
+          </div>
+        </div>
+
+        <div class="col s6">
+          <h3>Ik ben nog geen klant</h3>
+          <a class="btn btn-default btn-primary" href="#/register">
+            Account aanmaken
+          </a>
+        </div>
+      </div>
+
+    </div> <!-- /container -->
+
+  </section>
+
+</template>
