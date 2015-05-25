@@ -7,10 +7,10 @@
 
       <div class="row">
 
-        <form class="col s12">
+        <form class="col s12" submit.delegate="CalculateRoute()">
           <div class="row">
 
-            <div class="card col s4" repeat.for="type of package_types">
+            <div class="card col s3" repeat.for="type of package_types">
               <label for="${type.type}" class="card small ${type.color} darken-1">
                 <div class="card-image">
                   <img src="${type.image}" style="height: 150px;">
@@ -19,9 +19,9 @@
                   <p>
                     <input type="radio" value.bind="type.type" checked.bind="$parent.package.size"
                            name="package_size" id="${type.type}">
-                    <label for="${type.type}">${type.type}</label>
+                    <label for="${type.type}"> ${type.name} (${type.type})</label>
                     <br />
-                    Afmeting: ${type.length} x ${type.width} x ${type.height}<br>
+                    <u>Maximale afmetingen:</u><br> ${type.max_length} x ${type.max_width} x ${type.max_height}<br>
                     ${type.description}
                   </p>
                 </div>
@@ -52,7 +52,7 @@
                   <label for="recipient_address_${address.id}">
                     ${address.type}:
                     ${address.street} ${address.number} ${address.ext},
-                    ${address.zipDigits} ${address.zipExtend}, ${address.city}
+                    ${address.zip_digits} ${address.zip_ext}, ${address.city}
                   </label>
                 </li>
               </ul>
@@ -65,7 +65,7 @@
                   <input type="radio" name="address_sender" value.bind="address.id"
                     checked.bind="$parent.package.sender_id" id="sender_address_${address.id}">
                   <label for="sender_address_${address.id}">
-                    ${address.type} ${address.street} ${address.number}, ${address.zipDigits} ${address.city}
+                    ${address.type} ${address.street} ${address.number}, ${address.zip_digits} ${address.zip_ext} ${address.city}
                   </label>
                 </li>
               </ul>
