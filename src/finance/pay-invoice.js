@@ -8,7 +8,6 @@ import {Router} from 'aurelia-router';
 export class AcceptInvoice {
 
   shipment_info = {};
-  date = new Date();
 
   constructor(validation, ea, router, rs) {
     this.validation = validation;
@@ -23,15 +22,9 @@ export class AcceptInvoice {
     });
   }
 
-  cancel() {
-    this.rs.update_shipment_to_cancel(this.shipment_info.shipment.id).then(shipment => {
+  pay(){
+    this.rs.update_shipment_to_payed(this.shipment_info.shipment.id).then(shipment => {
       this.router.navigate('invoice');
-    });
-  }
-
-  accept() {
-    this.rs.update_shipment_to_accept(this.shipment_info.shipment.id).then(shipment => {
-      this.router.navigate('pay-invoice?shipment_id=' + this.shipment_info.shipment.id);
     });
   }
 

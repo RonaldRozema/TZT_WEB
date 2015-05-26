@@ -22,6 +22,7 @@ export class App {
       { route: 'create-client', moduleId: './relation/create-client', nav: false, title: 'Contact aanmaken' },
       { route: 'invoice', moduleId: './finance/invoice', nav: true, title: 'Facturen' },
       { route: 'accept-invoice/:shipment_id', moduleId: './finance/accept-invoice', nav: false, title:'Factuur' },
+      { route: 'pay-invoice/:shipment_id', moduleId: './finance/pay-invoice', nav: false, title: 'Betaal factuur' },
       { route: 'tracking', moduleId: './shipping/tracking', nav: true, title: 'Traceren' },
       { route: 'logout', moduleId: './user/logout', nav: true, title: 'Uitloggen' }
     ]);

@@ -31,6 +31,7 @@ System.config({
     "core-js": "npm:core-js@0.9.6",
     "css": "github:systemjs/plugin-css@0.1.10",
     "font-awesome": "npm:font-awesome@4.3.0",
+    "moment": "github:moment/moment@2.10.3",
     "traceur": "github:jmcriffey/bower-traceur@0.0.88",
     "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.88",
     "github:aurelia/animator-css@0.2.0": {

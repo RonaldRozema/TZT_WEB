@@ -47,7 +47,7 @@ export class Package {
   }
 
   CalculateRoute() {
-    this.routeService.calculateRoute(this.package.sender_id ,this.package.receiver_address_id, this.package.size)
+    this.routeService.calculateRoute(this.package.sender_id ,this.package.receiver_address_id, this.package.size, this.user.id)
       .then(route => {
         this.router.navigate('accept-invoice/' + route.shipment.id);
       });

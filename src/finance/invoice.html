@@ -2,6 +2,43 @@
   <section>
     <div class="container">
       <h3>Mijn facturen</h3>
+
+      <div class="row">
+        <div class="col s12">
+          <require from="../components/momentconverter"></require>
+          <table class="bordered">
+            <tr>
+              <th>#</th>
+              <th>Status</th>
+              <th>Date</th>
+              <th>Action</th>
+            </tr>
+            <tr repeat.for="shipment of shipments">
+              <td>${shipment.id}</td>
+              <td>${shipment.status}</td>
+              <td>${shipment.date | moment}</td>
+              <td>
+                <button class="btn waves-effect waves-ligt red white-text" if.one-way="shipment.status == 'Canceled'"
+                        disabled>
+                  Canceled
+                </button>
+                <a class="btn waves-effect waves-light yellow" if.one-way="shipment.status == 'Pending'"
+                  href="#/accept-invoice/${shipment.id}">
+                  Offerte
+                </a>
+                <a class="btn waves-effect waves-light purple" if.one-way="shipment.status == 'Accepted'"
+                  href="#/pay-invoice/${shipment.id}">
+                  Betalen
+                </a>
+                <button class="btn waves-effect waves-light blue white-text" if.one-way="shipment.status == 'Shipped'"
+                  disabled>
+                  Verstuurd
+                </button>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
     </div>
   </section>
 </template>
