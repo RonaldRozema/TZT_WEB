@@ -5,17 +5,19 @@ import {UserService} from '../services/userservice';
 import {ContactService} from '../services/contactService';
 import {RouteService} from '../services/routeService';
 import {EventAggregator} from 'aurelia-event-aggregator';
+import {Router} from 'aurelia-router';
 
-@inject(HttpClient, PackageService, UserService, ContactService, RouteService, EventAggregator)
+@inject(HttpClient, PackageService, UserService, ContactService, RouteService, EventAggregator, Router)
 export class Package {
 
-  constructor(http, ps, us, cs, rs, ea) {
+  constructor(http, ps, us, cs, rs, ea, router) {
     this.http = http;
     this.packageService = ps;
     this.userService = us;
     this.contactService = cs;
     this.routeService = rs;
     this.ea = ea;
+    this.router = router;
 
     this.user = {};
     this.package = {};
@@ -47,7 +49,7 @@ export class Package {
   CalculateRoute() {
     this.routeService.calculateRoute(this.package.sender_id ,this.package.receiver_address_id, this.package.size)
       .then(route => {
-        console.log(route);
+        this.router.navigate('accept-invoice/' + route.shipment.id);
       });
   }
 

@@ -1,0 +1,114 @@
+<template>
+  <section>
+    <div class="container">
+      <h3>Factuur #${shipment_info.shipment.id}</h3>
+
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-content black-text">
+              <span class="card-title black-text">Van</span>
+              <hr>
+              <table>
+                <tr>
+                  <td>Straat + nummer:</td>
+                  <td>${shipment_info.from_address.street} ${shipment_info.from_address.number} ${shipment_info.from_address.number_ext}</td>
+                </tr>
+                <tr>
+                  <td>Postcode + plaats:</td>
+                  <td>${shipment_info.from_address.zip_digits} ${shipment_info.from_address.zip_ext}, ${shipment_info.from_address.city}</td>
+                </tr>
+                <tr>
+                  <td>Land:</td>
+                  <td>${shipment_info.from_address.country}</td>
+                </tr>
+                <!--<tr>-->
+                  <!--<td>T.a.v.:</td>-->
+                  <!--<td>${shipment_info.from_address.User.first_name} ${shipment_info.from_address.User.middel_name} ${shipment_info.from_address.User.last_name}</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                  <!--<td>Telefoon:</td>-->
+                  <!--<td>${shipment_info.from_address.User.phone_number}</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                  <!--<td>Email:</td>-->
+                  <!--<td>${shipment_info.from_address.User.email}</td>-->
+                <!--</tr>-->
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-content black-text">
+              <span class="card-title black-text">Naar</span>
+              <hr>
+              <table>
+                <tr>
+                  <td>Straat + nummer:</td>
+                  <td>${shipment_info.to_address.street} ${shipment_info.to_address.number} ${shipment_info.to_address.number_ext}</td>
+                </tr>
+                <tr>
+                  <td>Postcode + plaats:</td>
+                  <td>${shipment_info.to_address.zip_digits} ${shipment_info.to_address.zip_ext}, ${shipment_info.to_address.city}</td>
+                </tr>
+                <tr>
+                  <td>Land:</td>
+                  <td>${shipment_info.to_address.country}</td>
+                </tr>
+                <!--<tr>-->
+                  <!--<td>T.a.v.:</td>-->
+                  <!--<td>${shipment_info.to_address.User.first_name} ${shipment_info.to_address.User.middel_name} ${shipment_info.to_address.User.last_name}</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                  <!--<td>Telefoon:</td>-->
+                  <!--<td>${shipment_info.to_address.User.phone_number}</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                  <!--<td>Email:</td>-->
+                  <!--<td>${shipment_info.to_address.User.email}</td>-->
+                <!--</tr>-->
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12">
+          <ul class="collection">
+            <li class="collection-item">
+              <table>
+                <tr>
+                  <td>1 x </td>
+                  <td>Pakket verzonden met TZT</td>
+                  <td>&euro; ${shipment_info.total_amount}</td>
+                </tr>
+              </table>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s4 offset-s8">
+          <div class="col s6">
+            <h5>Totaal</h5>
+          </div>
+          <div class="col s6">
+            <h5>&euro; ${shipment_info.total_amount}</h5>
+        </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s5 offset-s7">
+          <button click.trigger="cancel()" class="btn waves-effect waves-light yellow">Annuleren</button>
+          <button click.trigger="send()" class="btn waves-effect waves-light">Accepteren</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</template>
