@@ -31,7 +31,7 @@ export class AcceptInvoice {
 
   accept() {
     this.rs.update_shipment_to_accept(this.shipment_info.shipment.id).then(shipment => {
-      this.router.navigate('pay-invoice?shipment_id=' + this.shipment_info.shipment.id);
+      this.router.navigate('pay-invoice/' + this.shipment_info.shipment.id);
     });
   }
 

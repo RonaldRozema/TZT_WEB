@@ -17,13 +17,13 @@ export class AcceptInvoice {
   }
 
   activate(routerValues) {
-    return this.rs.get_shipment_by_id(routerValues.shipment_id).then(shipment_info => {
+    return this.rs.get_invoice_by_shipment_by_id(routerValues.shipment_id).then(shipment_info => {
       this.shipment_info = shipment_info;
     });
   }
 
   pay(){
-    this.rs.update_shipment_to_payed(this.shipment_info.shipment.id).then(shipment => {
+    this.rs.update_shipment_to_payed(this.shipment_info.id).then(shipment => {
       this.router.navigate('invoice');
     });
   }

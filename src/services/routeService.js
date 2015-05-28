@@ -34,6 +34,17 @@ export class RouteService {
     });
   }
 
+  get_invoice_by_shipment_by_id(shipment_id) {
+    return new HttpClient()
+      .createRequest('api/planner/get_invoice_by_shipment_by_id?shipment_id=' + shipment_id)
+      .asGet()
+      .withBaseUrl(this.settings.apiUrl)
+      .withHeader('Authorization', 'Bearer ' + this.authService.getAccessToken())
+      .send().then(data => {
+        return data.content;
+      });
+  }
+
   get_shipments_for_user(user_id) {
     return new HttpClient()
     .createRequest('api/planner/get_shipments_for_user?user_id=' + user_id)
@@ -56,15 +67,26 @@ export class RouteService {
     });
   }
 
-  update_shipment_to_payed(shipment_id) {
+  update_shipment_to_accept(shipment_id) {
     return new HttpClient()
-    .createRequest('api/planner/update_shipment_to_payed?shipment_id=' + shipment_id)
+    .createRequest('api/planner/update_shipment_to_accept?shipment_id=' + shipment_id)
     .asPost()
     .withBaseUrl(this.settings.apiUrl)
     .withHeader('Authorization', 'Bearer ' + this.authService.getAccessToken())
     .send().then(data => {
       return data.content;
     });
+  }
+
+  update_shipment_to_payed(shipment_id) {
+    return new HttpClient()
+      .createRequest('api/planner/update_shipment_to_payed?shipment_id=' + shipment_id)
+      .asPost()
+      .withBaseUrl(this.settings.apiUrl)
+      .withHeader('Authorization', 'Bearer ' + this.authService.getAccessToken())
+      .send().then(data => {
+        return data.content;
+      });
   }
 
 }
