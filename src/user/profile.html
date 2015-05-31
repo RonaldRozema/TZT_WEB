@@ -13,8 +13,8 @@
             <ul class="collection">
               <li class="collection-item"><b>Naam:</b> ${user.first_name} ${user.middle_name} ${user.last_name}</li>
               <li class="collection-item"><b>E-mail:</b> ${user.email}</li>
-              <li class="collection-item"><b>Telefoon:</b> ${user.phoneNumber}</li>
-              <li class="collection-item"><b>Is courier</b> ${user.Profile.isCourier}</li>
+              <li class="collection-item"><b>Telefoon:</b> ${user.phone_number}</li>
+              <li class="collection-item"><b>Is courier</b> ${user.Profile.is_courier}</li>
             </ul>
 
           </div>
@@ -25,8 +25,8 @@
             <hr />
 
             <ul class="collection">
-              <li class="collection-item"><b>Bedrijfsnaam:</b> ${user.Profile.companyName}</li>
-              <li class="collection-item"><b>KVK nummer:</b> ${user.Profile.kvkNo}</li>
+              <li class="collection-item"><b>Bedrijfsnaam:</b> ${user.Profile.company_name}</li>
+              <li class="collection-item"><b>KVK nummer:</b> ${user.Profile.kvk_no}</li>
             </ul>
           </div>
         </div>
@@ -41,7 +41,8 @@
             <ul class="collection">
               <li repeat.for="address of user.Addresses" class="collection-item">
                 <b>${address.type}: </b>
-                ${address.street} ${address.number}, ${address.zipDigits} ${address.city}
+                ${address.street} ${address.number} ${address.number_ext}, ${address.zip_digits} ${address.zip_ext},
+                ${address.city}
               </li>
             </ul>
           </div>
