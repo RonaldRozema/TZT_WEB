@@ -18,7 +18,6 @@ export class Label {
 
   activate(routerValues) {
     return this.ps.getShipmentByTrackingNumber(routerValues.tracking_number).then(shipment => {
-      console.log(shipment);
       this.shipment = shipment;
     });
   }
