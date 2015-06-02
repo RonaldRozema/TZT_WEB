@@ -22,4 +22,15 @@ export class PackageService {
       });
   }
 
+  getShipmentByTrackingNumber(tracking_number) {
+    return new HttpClient()
+      .createRequest('api/package?tracking_number=' + tracking_number)
+      .asGet()
+      .withBaseUrl(this.settings.apiUrl)
+      .withHeader('Authorization', 'Bearer ' + this.authService.getAccessToken())
+      .send().then(data => {
+        return data.content;
+      });
+  }
+
 }

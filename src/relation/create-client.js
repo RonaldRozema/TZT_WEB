@@ -21,6 +21,7 @@ export class CreateClient {
     this.userService = userService;
 
     this.userService.getProfile().then(user => {
+      console.log(user);
       this.user = user;
     });
 
@@ -50,6 +51,8 @@ export class CreateClient {
   }
 
   create() {
+
+    console.log(this.user);
 
     this.error = "";
     this.info = "";

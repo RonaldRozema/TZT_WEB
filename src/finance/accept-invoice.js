@@ -30,7 +30,6 @@ export class AcceptInvoice {
   }
 
   accept(create) {
-    console.log(create);
     this.rs.update_shipment_to_accept(this.shipment_info.shipment.id, create).then(shipment => {
       this.router.navigate('pay-invoice/' + this.shipment_info.shipment.id);
     });

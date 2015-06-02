@@ -1,0 +1,70 @@
+<template>
+  <section>
+    <div class="container">
+
+      <h3>Label</h3>
+
+      <div class="fa-border row">
+
+        <div class="col s3">
+
+          <div class="row">
+
+          </div>
+
+          <div class="row">
+            Tracking nummer: <br>
+            ${shipment.tracking_number}
+          </div>
+
+        </div>
+        <div class="col s4 offset-s1">
+          Van
+          <hr>
+          <table>
+            <tr if.one-way="shipment.from.User.Profile.company_name">
+              <td>${shipment.from.User.Profile.company_name}</td>
+            </tr>
+            <tr>
+              <td>${shipment.from.User.first_name} ${shipment.from.User.middle_name} ${shipment.from.User.last_name}</td>
+            </tr>
+            <tr>
+              <td>${shipment.from.street} ${shipment.from.number} ${shipment.from.number_ext}</td>
+            </tr>
+            <tr>
+              <td>${shipment.from.zip_digits} ${shipment.from.zip_ext} ${shipment.from.city}</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="col s4">
+          Naar
+          <hr>
+          <table>
+            <tr>
+              <td>${shipment.to.Company.name}</td>
+            </tr>
+            <tr>
+              <td>${shipment.to.street} ${shipment.to.number} ${shipment.to.number_ext}</td>
+            </tr>
+            <tr>
+              <td>${shipment.to.zip_digits} ${shipment.to.zip_ext} ${shipment.to.city}</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="row">
+          <div class="col s12">
+            <img src="../../resources/images/empty-barcode" class="center"
+                 style="width: 80%; height: 60px; margin-left: 30px; margin-top: 20px;">
+          </div>
+          <div class="col s3 offset-s4">
+            <h6>TZT PBS by projectgroep 4</h6>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+</template>

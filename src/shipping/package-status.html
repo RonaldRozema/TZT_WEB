@@ -1,0 +1,32 @@
+<template>
+  <section>
+    <div class="container">
+
+      <h3>Shipment tracking: ${shipment.tracking_number}</h3>
+
+      <require from="../components/momentconverter"></require>
+
+      <table>
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>Client</th>
+          <th>Tracking nummer</th>
+          <th>Status</th>
+          <th>Date</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>${shipment.id}</td>
+            <td>${shipment.to.Company.name}</td>
+            <td>${shipment.tracking_number}</td>
+            <td>${shipment.status}</td>
+            <td>${shipment.date | moment}</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </section>
+</template>
