@@ -12,6 +12,14 @@ export class Register {
 
   url = 'http://localhost:8080/api/';
 
+  get canSave() {
+    if(!this.validation.result.isValid) {
+      return false;
+    }
+
+    return true;
+  }
+
   constructor(authService, validation, http, settings, router) {
 
     this.user = {};

@@ -9,12 +9,14 @@
           <table class="bordered">
             <tr>
               <th>#</th>
+              <th>Client</th>
               <th>Status</th>
               <th>Date</th>
-              <th>Action</th>
+              <th></th>
             </tr>
             <tr repeat.for="shipment of shipments">
               <td>${shipment.id}</td>
+              <td>${shipment.to.Company.name}</td>
               <td>${shipment.status}</td>
               <td>${shipment.date | moment}</td>
               <td>

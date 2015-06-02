@@ -17,7 +17,7 @@ export class AuthenticationService {
   login(username, password) {
     var data = 'grant_type=password&username=' + username +
       '&password=' + password +
-      '&client_id=servicedesk&client_secret=servicedesk';
+      '&client_id=tzt&client_secret=tzt';
 
     return this.httpClient
       .configure(x => x.withHeader('Content-Type', 'application/x-www-form-urlencoded'))
